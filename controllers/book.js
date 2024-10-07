@@ -13,20 +13,43 @@ export const addBook = async (req, res, next) => {
 };
 
 export const getBook = async (req, res, next) => {
-  // fetch books from database
-  await BookModel.findById();
-  // return response
-  res.json("book was added");
+  try {
+    // fetch books from database
+    const book = await BookModel.findById(book);
+    // return response
+    res.status(201).json("book was added");
+  } catch (error) {
+    next(error);
+  }
 };
 export const getBooks = async (req, res, next) => {
-  await BookModel.find();
-  res.json("books were added");
+  try {
+    // fetch books from database
+    const books = await BookModel.find(books);
+    // return response
+    res.status(201).json("book was added");
+  } catch (error) {
+    next(error);
+  }
 };
+
 export const updateBook = async (req, res, next) => {
-  await BookModel.updateOne(req.body);
-  res.json("book was update");
+  try {
+    // fetch books from database
+    const update = await BookModel.updateOne(update);
+    // return response
+    res.status(201).json("book was updated");
+  } catch (error) {
+    next(error);
+  }
 };
 export const deleteBook = async (req, res, next) => {
-  await BookModel.deleteOne(req.body);
-  res.json("book was deleted");
+  try {
+    // fetch books from database
+    const bookdelete = await BookModel.deleteOne(bookdelete);
+    // return response
+    res.status(201).json("book was updated");
+  } catch (error) {
+    next(error);
+  }
 };
