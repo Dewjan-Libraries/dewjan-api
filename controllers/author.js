@@ -11,6 +11,7 @@ export const addAuthor = async (req, res, next) => {
    }
 }
 
+// 
 export const getAuthor = async (req, res, next) => {
     try {
       const author = await AuthorModel.findById();
