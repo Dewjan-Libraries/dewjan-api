@@ -2,6 +2,7 @@ import express from "express";
 import bookRouter from "./routes/book.js";
 import cors from "cors";
 import mongoose from "mongoose";
+import reviewRouter from "./routes/reviews.js";
 
 // connect database
 await mongoose.connect(process.env.MONGO_URI);
@@ -14,6 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(cors);
 app.use(bookRouter);
+app.use(reviewRouter);
 
 // create server
 app.listen(3000, () => {
