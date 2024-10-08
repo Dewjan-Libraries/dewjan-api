@@ -1,6 +1,10 @@
 import express from "express";
 import bookRouter from "./routes/book.js";
 import cors from "cors";
+import mongoose from "mongoose";
+
+// connect database
+await mongoose.connect(process.env.MONGO_URI);
 
 //  create  an express app
 
