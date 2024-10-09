@@ -19,7 +19,7 @@ bookRouter.get("/books", getBooks);
 
 bookRouter.patch("/book/:id", updateBook);
 
-bookRouter.delete("/book", deleteBook);
+bookRouter.delete("/book/:id", deleteBook);
 
 // export router
 export default bookRouter;

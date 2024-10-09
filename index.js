@@ -14,10 +14,11 @@ const app = express();
 
 // creating middlewares
 app.use(express.json());
-app.use(cors);
+app.use(cors());
 app.use(bookRouter);
 app.use(reviewRouter);
-app.use(authorRouter)
+app.use(authorRouter);
+
 // create server
 app.listen(3000, () => {
   console.log("app is listening");
