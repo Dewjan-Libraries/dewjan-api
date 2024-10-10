@@ -32,18 +32,26 @@ export const getAuthors = async (req, res, next) => {
   }
 };
 
+// export const updateAuthor = async (req, res, next) => {
+//   try {
+//     const authorupdate = await AuthorModel.findByIdAndUpdate(
+//       req.params.id,
+//       req.body,
+//       { new: true }
+//     );
+//     res.status(201).json(authorupdate);
+//   } catch (error) {
+//     next(error);
+//   }
+// };
+
 export const updateAuthor = async (req, res, next) => {
   try {
-    const authorupdate = await AuthorModel.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      {
-        new: true,
-      }
-    );
-    res.status(201).json(authorupdate);
+    await AuthorModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+
+    res.status(200).json("update successful");
   } catch (error) {
-    next(error);
+    next(eror);
   }
 };
 
