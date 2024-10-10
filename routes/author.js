@@ -13,9 +13,9 @@ authorRouter.post("/author", addAuthor);
 
 authorRouter.get("/author/:id", getAuthor);
 
-authorRouter.get("/author", getAuthors);
+authorRouter.get("/authors", getAuthors);
 
-authorRouter.patch("/author", updateAuthor);
+authorRouter.patch("/author/:id", updateAuthor);
 
 authorRouter.delete("/author", deleteAuthor);
 
