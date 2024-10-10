@@ -9,14 +9,14 @@ import {
 
 const authorRouter = Router();
 
-authorRouter.post("/author", addAuthor);
+authorRouter.post("/authors", addAuthor);
 
-authorRouter.get("/author/:id", getAuthor);
+authorRouter.get("/authors/:id", getAuthor);
 
 authorRouter.get("/authors", getAuthors);
 
-authorRouter.patch("/author/:id", updateAuthor);
+authorRouter.patch("/authors/:id", updateAuthor);
 
-authorRouter.delete("/author", deleteAuthor);
+authorRouter.delete("/authors/:id", deleteAuthor);
 
 export default authorRouter;

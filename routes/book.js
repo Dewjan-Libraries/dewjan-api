@@ -17,7 +17,7 @@ bookRouter.get("/book/:id", getBook);
 
 bookRouter.get("/books", getBooks);
 
-bookRouter.patch("/book/:id", updateBook);
+bookRouter.patch("/books/:id", updateBook);
 
 bookRouter.delete("/book/:id", deleteBook);
 
