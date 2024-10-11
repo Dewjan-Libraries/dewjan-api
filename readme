@@ -1,0 +1,12 @@
+Book Management API Documentation
+Overview
+This API allows for the management of a collection of books, including adding, retrieving, updating, deleting, and searching books by title, author, or genre. The API interacts with the BookModel, a MongoDB model, to perform CRUD operations.
+
+
+
+Endpoints
+1. Add a New Book
+Endpoint: /books
+Method: POST
+Description: Adds a new book to the collection.
+Request Body

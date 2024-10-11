@@ -62,3 +62,35 @@ export const deleteBook = async (req, res, next) => {
     next(error);
   }
 };
+
+
+export const searchBooks = async (req, res, next) => {
+  try {
+    // Destructure query parameters from request
+    const { title, author, genre } = req.query;
+
+    // Build the query object
+    let query = {};
+
+    // Add filters to the query object if any query parameter is provided
+    if (title) {
+      query.title = { $regex: title, $options: "i" }; // Case-insensitive search
+    }
+
+    if (author) {
+      query["author.name"] = { $regex: author, $options: "i" }; // Case-insensitive search on the author's name
+    }
+
+    if (genre) {
+      query.genre = { $regex: genre, $options: "i" }; // Case-insensitive search on genre
+    }
+
+    // Fetch books from database based on the query
+    const books = await BookModel.find(query).populate("author");
+
+    // Return the response
+    res.status(200).json(books);
+  } catch (error) {
+    next(error);
+  }
+};
