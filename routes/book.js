@@ -4,6 +4,7 @@ import {
   deleteBook,
   getBook,
   getBooks,
+  searchBooks,
   updateBook,
 } from "../controllers/book.js";
 
@@ -20,6 +21,8 @@ bookRouter.get("/books", getBooks);
 bookRouter.patch("/books/:id", updateBook);
 
 bookRouter.delete("/book/:id", deleteBook);
+
+bookRouter.get("/books/search", searchBooks);
 
 // export router
 export default bookRouter;
