@@ -3,11 +3,11 @@ import Joi from "joi";
 // define validator for addbook
 
 export const addBookValidator = Joi.object({
-  title: Joi.string().required(),
-  summary: Joi.string().required(),
-  author: Joi.string().required(),
-  genre: Joi.string().required(),
-  description: Joi.string().required(),
+  title: Joi.string().optional(),
+  summary: Joi.string().optional(),
+  author: Joi.string().optional(),
+  genre: Joi.string().optional(),
+  description: Joi.string().optional(),
   publishDate: Joi.number(),
   image: Joi.string(),
   pdf: Joi.string(),
