@@ -14,7 +14,7 @@ const bookRouter = Router();
 // create routes
 bookRouter.post("/books", addBook);
 
-bookRouter.get("/book/:id", getBook);
+bookRouter.get("/books/:id", getBook);
 
 bookRouter.get("/books", getBooks);
 
